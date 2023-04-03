@@ -11,7 +11,7 @@
         url: "https://pchr.cl/html_components/divnavbar.html",
         dataType: 'html'
     }).done(function(data){
-        $('divnavbar').prepend(data); 
+        $('#divnavbar').prepend(data); 
     });
 
     
