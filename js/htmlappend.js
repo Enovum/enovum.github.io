@@ -13,7 +13,11 @@
     }).done(function(data){
         $('#divnavbar').prepend(data); 
     });
-
-    
+    $.ajax({
+        url: "https://pchr.cl/html_components/footer.html",
+        dataType: 'html'
+    }).done(function(data){
+        $('#footer').prepend(data); 
+    });
 
 })(jQuery);
