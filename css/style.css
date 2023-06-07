@@ -491,3 +491,22 @@ h6,
         margin-bottom: -75px;
     }
 }
+
+#cantColaboradores::placeholder{
+    color: white;
+}
+
+.ease{
+    transition: all .5s ease;
+}
+
+#toast-container__body {
+    max-height: 0px;
+    overflow: hidden;
+    padding: 0px;
+}
+
+#shoppingCart:hover #toast-container__body {
+    max-height: 250px;
+    padding: 0.75rem;
+}
