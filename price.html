@@ -33,12 +33,13 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MVHC23D0S9"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-MVHC23D0S9');
+    gtag('config', 'G-MVHC23D0S9');
 </script>
+
 <body>
     <!-- Espacio para el encabezado-->
     <!-- Navbar & Carousel Start -->
@@ -65,11 +66,13 @@
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
                 <div class="modal-header border-0">
-                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
                 <div class="modal-body d-flex align-items-center justify-content-center">
                     <div class="input-group" style="max-width: 600px;">
-                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
+                        <input type="text" class="form-control bg-transparent border-primary p-3"
+                            placeholder="Type search keyword">
                         <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
                     </div>
                 </div>
@@ -81,6 +84,90 @@
 
     <!-- Pricing Plan Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">
+                    Arma tu plan de ambientes laborales
+                </h5>
+                <h1 class="mb-0"></h1>
+            </div>
+            <div class="d-flex lg-offset-1">
+                <div class="row g-0">
+                    <div class="d-flex mb-4 align-items-center justify-content-center gap-3">
+                        <h4>Cantidad de colaboradores: </h4>&nbsp;
+                        <input class="form-control-lg bg-info text-white border-0" value="1000" placeholder="0"
+                            type="number" name="cantColaboradores" id="cantColaboradores">
+                    </div>
+                    <div class="col-lg-5 col-sm-12 wow slideInUp" data-wow-delay="0.6s">
+                        <div class="bg-white shadow rounded" id="containerPlanBasicoEng">
+                            <div class="border-bottom py-4 px-5 mb-4 form-check text-center">
+                                <label class="form-check-label" role="button">
+                                    <h4 class="text-primary mb-1">Plan basico</h4>
+                                    <span class="text-dark fw-bolder fs-2">
+                                        <small class="align-top fs-5">UF</small>
+                                        <span id="totalPriceBasicEng"></span>
+                                        <small class="align-bottom fs-5">/ mensual</small>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="p-5 pt-0">
+                                <div class="d-flex justify-content-between mb-3"><span>HTML5 & CSS3</span>
+                                    <i class="fa fa-check text-primary pt-1"></i>
+                                </div>
+                                <div class="d-flex justify-content-between mb-3"><span>Bootstrap v5</span>
+                                    <i class="fa fa-check text-primary pt-1"></i>
+                                </div>
+                                <div class="d-flex justify-content-between mb-3"><span>Responsive Layout</span>
+                                    <i class="fa fa-times text-danger pt-1"></i>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2"><span>Cross-browser Support</span>
+                                    <i class="fa fa-times text-danger pt-1"></i>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="p-3 pt-0 text-end">
+                                <a class="btn btn-dark py-2 px-4 mt-2 text-white col-12 rounded-3" data-value='Plan basico' id="planBasicoEng">Incluir</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-sm-12 offset-lg-1 wow slideInUp" data-wow-delay="0.3s">
+                        <div class="bg-light rounded position-relative" id="containerPlanProEng" style="z-index: 1;">
+                            <div class="border-bottom py-4 px-5 mb-4 form-check text-center">
+                                <label class="form-check-label" role="button">
+                                    <h4 class="text-primary mb-1">Plan completo</h4>
+
+                                    <span class="text-dark fw-bolder fs-2">
+                                        <small class="align-top fs-5">UF</small>
+                                        <span id="totalPriceProEng"></span>
+                                        <small class="align-bottom fs-5">/ mensual</small>
+                                    </span>
+
+                                </label>
+                            </div>
+                            <div class="p-5 pt-0">
+                                <div class="d-flex justify-content-between mb-3"><span>HTML5 & CSS3</span>
+                                    <i class="fa fa-check text-primary pt-1"></i>
+                                </div>
+                                <div class="d-flex justify-content-between mb-3"><span>Bootstrap v5</span>
+                                    <i class="fa fa-check text-primary pt-1"></i>
+                                </div>
+                                <div class="d-flex justify-content-between mb-3"><span>Responsive Layout</span>
+                                    <i class="fa fa-check text-primary pt-1"></i>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2"><span>Cross-browser Support</span>
+                                    <i class="fa fa-times text-danger pt-1"></i>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="p-3 pt-0 text-end">
+                                <a class="btn btn-dark py-2 px-4 mt-2 text-white col-12 rounded-3" data-value='Plan completo' id="planProEng">Incluir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container py-5">
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
                 <h5 class="fw-bold text-primary text-uppercase">Nuestros Planes - Ambientes Laborales</h5>
@@ -96,12 +183,17 @@
                         <div class="p-5 pt-0">
                             <h1 class="display-5 mb-3">
                                 <small class="align-top" style="font-size: 22px; line-height: 45px;">UF</small>102<small
-                                    class="align-bottom" style="font-size: 16px; line-height: 40px;"> / Por Diagnostico</small>
+                                    class="align-bottom" style="font-size: 16px; line-height: 40px;"> / Por
+                                    Diagnostico</small>
                             </h1>
-                            <div class="d-flex justify-content-between mb-3"><span>HTML5 & CSS3</span><i class="fa fa-check text-primary pt-1"></i></div>
-                            <div class="d-flex justify-content-between mb-3"><span>Bootstrap v5</span><i class="fa fa-check text-primary pt-1"></i></div>
-                            <div class="d-flex justify-content-between mb-3"><span>Responsive Layout</span><i class="fa fa-times text-danger pt-1"></i></div>
-                            <div class="d-flex justify-content-between mb-2"><span>Cross-browser Support</span><i class="fa fa-times text-danger pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-3"><span>HTML5 & CSS3</span><i
+                                    class="fa fa-check text-primary pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-3"><span>Bootstrap v5</span><i
+                                    class="fa fa-check text-primary pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-3"><span>Responsive Layout</span><i
+                                    class="fa fa-times text-danger pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-2"><span>Cross-browser Support</span><i
+                                    class="fa fa-times text-danger pt-1"></i></div>
                             <a href="" class="btn btn-primary py-2 px-4 mt-4">Order Now</a>
                         </div>
                     </div>
@@ -115,12 +207,17 @@
                         <div class="p-5 pt-0">
                             <h1 class="display-5 mb-3">
                                 <small class="align-top" style="font-size: 22px; line-height: 45px;">UF</small>150<small
-                                    class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Por Medición</small>
+                                    class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Por
+                                    Medición</small>
                             </h1>
-                            <div class="d-flex justify-content-between mb-3"><span>HTML5 & CSS3</span><i class="fa fa-check text-primary pt-1"></i></div>
-                            <div class="d-flex justify-content-between mb-3"><span>Bootstrap v5</span><i class="fa fa-check text-primary pt-1"></i></div>
-                            <div class="d-flex justify-content-between mb-3"><span>Responsive Layout</span><i class="fa fa-check text-primary pt-1"></i></div>
-                            <div class="d-flex justify-content-between mb-2"><span>Cross-browser Support</span><i class="fa fa-times text-danger pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-3"><span>HTML5 & CSS3</span><i
+                                    class="fa fa-check text-primary pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-3"><span>Bootstrap v5</span><i
+                                    class="fa fa-check text-primary pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-3"><span>Responsive Layout</span><i
+                                    class="fa fa-check text-primary pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-2"><span>Cross-browser Support</span><i
+                                    class="fa fa-times text-danger pt-1"></i></div>
                             <a href="" class="btn btn-primary py-2 px-4 mt-4">Order Now</a>
                         </div>
                     </div>
@@ -134,12 +231,25 @@
                         <div class="p-5 pt-0">
                             <h1 class="display-5 mb-3">
                                 <small class="align-top" style="font-size: 22px; line-height: 45px;">UF</small>190<small
-                                    class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Por Medición</small>
+                                    class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Por
+                                    Medición</small>
                             </h1>
-                            <div class="d-flex justify-content-between mb-3"><span>HTML5 & CSS3</span><i class="fa fa-check text-primary pt-1"></i></div>
-                            <div class="d-flex justify-content-between mb-3"><span>Bootstrap v5</span><i class="fa fa-check text-primary pt-1"></i></div>
-                            <div class="d-flex justify-content-between mb-3"><span>Responsive Layout</span><i class="fa fa-check text-primary pt-1"></i></div>
-                            <div class="d-flex justify-content-between mb-2"><span>Cross-browser Support</span><i class="fa fa-check text-primary pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>HTML5 & CSS3</span>
+                                <i class="fa fa-check text-primary pt-1"></i>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>Bootstrap v5</span>
+                                <i class="fa fa-check text-primary pt-1"></i>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>Responsive Layout</span>
+                                <i class="fa fa-check text-primary pt-1"></i>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Cross-browser Support</span>
+                                <i class="fa fa-check text-primary pt-1"></i>
+                            </div>
                             <a href="" class="btn btn-primary py-2 px-4 mt-4">Order Now</a>
                         </div>
                     </div>
@@ -161,12 +271,17 @@
                         <div class="p-5 pt-0">
                             <h1 class="display-5 mb-3">
                                 <small class="align-top" style="font-size: 22px; line-height: 45px;">UF</small>102<small
-                                    class="align-bottom" style="font-size: 16px; line-height: 40px;"> / Por Diagnostico</small>
+                                    class="align-bottom" style="font-size: 16px; line-height: 40px;"> / Por
+                                    Diagnostico</small>
                             </h1>
-                            <div class="d-flex justify-content-between mb-3"><span>HTML5 & CSS3</span><i class="fa fa-check text-primary pt-1"></i></div>
-                            <div class="d-flex justify-content-between mb-3"><span>Bootstrap v5</span><i class="fa fa-check text-primary pt-1"></i></div>
-                            <div class="d-flex justify-content-between mb-3"><span>Responsive Layout</span><i class="fa fa-times text-danger pt-1"></i></div>
-                            <div class="d-flex justify-content-between mb-2"><span>Cross-browser Support</span><i class="fa fa-times text-danger pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-3"><span>HTML5 & CSS3</span><i
+                                    class="fa fa-check text-primary pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-3"><span>Bootstrap v5</span><i
+                                    class="fa fa-check text-primary pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-3"><span>Responsive Layout</span><i
+                                    class="fa fa-times text-danger pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-2"><span>Cross-browser Support</span><i
+                                    class="fa fa-times text-danger pt-1"></i></div>
                             <a href="" class="btn btn-primary py-2 px-4 mt-4">Order Now</a>
                         </div>
                     </div>
@@ -180,12 +295,25 @@
                         <div class="p-5 pt-0">
                             <h1 class="display-5 mb-3">
                                 <small class="align-top" style="font-size: 22px; line-height: 45px;">UF</small>150<small
-                                    class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Por Medición</small>
+                                    class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Por
+                                    Medición</small>
                             </h1>
-                            <div class="d-flex justify-content-between mb-3"><span>HTML5 & CSS3</span><i class="fa fa-check text-primary pt-1"></i></div>
-                            <div class="d-flex justify-content-between mb-3"><span>Bootstrap v5</span><i class="fa fa-check text-primary pt-1"></i></div>
-                            <div class="d-flex justify-content-between mb-3"><span>Responsive Layout</span><i class="fa fa-check text-primary pt-1"></i></div>
-                            <div class="d-flex justify-content-between mb-2"><span>Cross-browser Support</span><i class="fa fa-times text-danger pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>HTML5 & CSS3</span>
+                                <i class="fa fa-check text-primary pt-1"></i>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>Bootstrap v5</span>
+                                <i class="fa fa-check text-primary pt-1"></i>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>Responsive Layout</span>
+                                <i class="fa fa-check text-primary pt-1"></i>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Cross-browser Support</span>
+                                <i class="fa fa-times text-danger pt-1"></i>
+                            </div>
                             <a href="" class="btn btn-primary py-2 px-4 mt-4">Order Now</a>
                         </div>
                     </div>
@@ -199,12 +327,25 @@
                         <div class="p-5 pt-0">
                             <h1 class="display-5 mb-3">
                                 <small class="align-top" style="font-size: 22px; line-height: 45px;">UF</small>190<small
-                                    class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Por Medición</small>
+                                    class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Por
+                                    Medición</small>
                             </h1>
-                            <div class="d-flex justify-content-between mb-3"><span>HTML5 & CSS3</span><i class="fa fa-check text-primary pt-1"></i></div>
-                            <div class="d-flex justify-content-between mb-3"><span>Bootstrap v5</span><i class="fa fa-check text-primary pt-1"></i></div>
-                            <div class="d-flex justify-content-between mb-3"><span>Responsive Layout</span><i class="fa fa-check text-primary pt-1"></i></div>
-                            <div class="d-flex justify-content-between mb-2"><span>Cross-browser Support</span><i class="fa fa-check text-primary pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>HTML5 & CSS3</span>
+                                <i class="fa fa-check text-primary pt-1"></i>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>Bootstrap v5</span>
+                                <i class="fa fa-check text-primary pt-1"></i>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>Responsive Layout</span>
+                                <i class="fa fa-check text-primary pt-1"></i>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Cross-browser Support</span>
+                                <i class="fa fa-check text-primary pt-1"></i>
+                            </div>
                             <a href="" class="btn btn-primary py-2 px-4 mt-4">Order Now</a>
                         </div>
                     </div>
@@ -214,6 +355,40 @@
     </div>
     <!-- Pricing Plan End -->
 
+    <div class="position-fixed p-3 bg-white border rounded-3 ease d-none" id="shoppingCart" style="z-index: 11; bottom: 1rem; left: 1rem;">
+        <div id="precioTotalToast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header border-0">
+                <strong class="me-auto">Precio final (mensual)</strong>
+                <div class="text-dark ms-3">
+                    <span class="fw-bolder">UF</span>
+                    <span class="fw-bolder" id="totalPrice">0</span>
+                    <small class="text-warning">+IVA</small>
+                </div>
+            </div>
+            <div class="toast-body ease" id="toast-container__body">
+
+                <div class="pb-1 mb-1 border-bottom d-none" id="ContainerPlanEngSelected" style="font-size: 12px;">
+                    <h6>Ambientes laborales:</h6>
+                    <div>
+                        <i class="fas fa-box text-info me-1"></i><span id="planEngSelected"></span>
+                        <i class="fas fa-users text-info me-1 ms-3"></i><span id="planCounterUsers"></span>
+                        <i class="fa fa-dollar-sign text-info me-1 ms-3"></i>UF <span id="priceEngSelected"></span>
+                    </div>
+                </div>
+
+                <div class="pb-1 mb-1 border-bottom d-none" id="planFormacionSelected" style="font-size: 12px;">
+                    <h6>Gestion de formacion:</h6>
+                    <div class="PrecioFinalEng">
+                        <span><i class="fas fa-box text-info me-1"></i>Plan basico</span>
+                        <span><i class="fas fa-users text-info me-1 ms-3"></i>1000</span>
+                        <span><i class="fa fa-dollar-sign text-info me-1 ms-3"></i>UF 1000</span>
+                    </div>
+                </div>
+
+            </div>
+            <a class="btn btn-warning py-2 px-4 mt-2 float-end text-white col-12 rounded-3" id="contactar">Contactar</a>
+        </div>
+    </div>
 
     <!-- Quote Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -296,7 +471,7 @@
         </div>
     </div>
     <!-- Vendor End -->
-    
+
     <div id="footer"></div>
 
     <!-- JavaScript Libraries -->
@@ -311,6 +486,7 @@
     <!-- Template Javascript -->
     <script src="js/htmlappend.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/cotizacion2.js"></script>
 </body>
 
 </html>
