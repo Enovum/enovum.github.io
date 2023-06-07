@@ -1,7 +1,7 @@
 /********** Template CSS **********/
 :root {
-    --primary: #06A3DA;
-    --secondary: #34AD54;
+    --primary: #091E3E;
+    --secondary: #aca9a9;
     --light: #EEF9FF;
     --dark: #091E3E;
 }
@@ -87,7 +87,8 @@ h6,
 
 .btn-primary,
 .btn-secondary {
-    color: #FFFFFF;
+    color: var(--secondary);
+    background-color:var(--primary);
     box-shadow: inset 0 0 0 50px transparent;
 }
 
@@ -185,7 +186,7 @@ h6,
     
     .sticky-top.navbar-dark {
         position: fixed;
-        background: #c9c9c9;
+        background: var(--secondary);
     }
 
     .navbar-dark .navbar-nav .nav-link::before {
