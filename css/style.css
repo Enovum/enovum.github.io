@@ -492,7 +492,7 @@ h6,
     }
 }
 
-#cantColaboradores::placeholder{
+#cantColaboradores::placeholder, #emailContacto::placeholder{
     color: white;
 }
 
@@ -509,4 +509,8 @@ h6,
 #shoppingCart:hover #toast-container__body {
     max-height: 250px;
     padding: 0.75rem;
+}
+
+#engToast > div.toast-body{
+    opacity: 0.9;
 }

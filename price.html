@@ -7,18 +7,21 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
-
+    <META HTTP-EQUIV="Access-Control-Allow-Origin" CONTENT="https://webforms.pipedrive.com">
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.min.css">
 
     <!-- Libraries Stylesheet -->
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -92,82 +95,172 @@
                 <h1 class="mb-0"></h1>
             </div>
             <div class="d-flex lg-offset-1">
-                <div class="row g-0">
-                    <div class="d-flex mb-4 align-items-center justify-content-center gap-3">
-                        <h4>Cantidad de colaboradores: </h4>&nbsp;
-                        <input class="form-control-lg bg-info text-white border-0" value="1000" placeholder="0"
-                            type="number" name="cantColaboradores" id="cantColaboradores">
-                    </div>
-                    <div class="col-lg-5 col-sm-12 wow slideInUp" data-wow-delay="0.6s">
-                        <div class="bg-white shadow rounded" id="containerPlanBasicoEng">
-                            <div class="border-bottom py-4 px-5 mb-4 form-check text-center">
-                                <label class="form-check-label" role="button">
-                                    <h4 class="text-primary mb-1">Plan basico</h4>
-                                    <span class="text-dark fw-bolder fs-2">
-                                        <small class="align-top fs-5">UF</small>
-                                        <span id="totalPriceBasicEng"></span>
-                                        <small class="align-bottom fs-5">/ mensual</small>
-                                    </span>
-                                </label>
+                <form id="contactForm">
+                    <div class="row g-0">
+                        <div class="d-grid mb-4 gap-3 justify-content-center border py-3 rounded-3 border-2"
+                            style="grid-template-columns: 1fr 1fr;justify-items: center;">
+                            <div class="text-center">
+                                <h4>Cantidad de colaboradores: </h4>
+                                <input class="form-control-lg bg-info text-white border-0" value="1000" placeholder="0"
+                                    type="text"
+                                    onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                                    maxlength="4" name="cantColaboradores" id="cantColaboradores" required>
                             </div>
-                            <div class="p-5 pt-0">
-                                <div class="d-flex justify-content-between mb-3"><span>HTML5 & CSS3</span>
-                                    <i class="fa fa-check text-primary pt-1"></i>
+                            <div class="text-center">
+                                <h4>Medio de contacto: </h4>
+                                <input class="form-control-lg bg-info text-white border-0"
+                                    placeholder="Ejemplo@gmail.com" type="email" name="emailContacto" id="emailContacto"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 offset-lg-1 col-sm-12 wow slideInUp" data-wow-delay="0.6s">
+                            <div class="bg-white shadow rounded" id="containerPlanBasicoEng">
+                                <div class="border-bottom py-4 px-5 mb-4 form-check text-center">
+                                    <label class="form-check-label" role="button">
+                                        <h4 class="text-primary mb-1">PLAN BÁSICO</h4>
+                                        <span class="text-dark fw-bolder fs-2">
+                                            <small class="align-top fs-5">UF</small>
+                                            <span id="totalPriceBasicEng"></span>
+                                            <small class="align-bottom text-warning fs-5">+ IVA</small>
+                                        </span>
+                                    </label>
                                 </div>
-                                <div class="d-flex justify-content-between mb-3"><span>Bootstrap v5</span>
-                                    <i class="fa fa-check text-primary pt-1"></i>
+                                <div class="p-5 pt-0">
+                                    <div class="d-flex justify-content-between mb-3"><span>Encuesta Online</span>
+                                        <i class="fa fa-check text-primary pt-1"></i>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-3"><span>Reporte Resultados para
+                                            administrador RRHH</span>
+                                        <i class="fa fa-check text-primary pt-1"></i>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-3"><span>Reporte resultados para
+                                            líderes</span>
+                                        <i class="fa fa-check text-primary pt-1"></i>
+                                    </div>
                                 </div>
-                                <div class="d-flex justify-content-between mb-3"><span>Responsive Layout</span>
-                                    <i class="fa fa-times text-danger pt-1"></i>
-                                </div>
-                                <div class="d-flex justify-content-between mb-2"><span>Cross-browser Support</span>
-                                    <i class="fa fa-times text-danger pt-1"></i>
+                                <hr>
+                                <div class="p-3 pt-0 text-end">
+                                    <button class="btn btn-warning py-2 px-4 mt-2 col-12 rounded-3"
+                                        data-value='Plan basico' data-label='ae135610-0605-11ee-9fef-598ff8a2911e'
+                                        id="planBasicoEng">Contactar</button>
                                 </div>
                             </div>
-                            <hr>
-                            <div class="p-3 pt-0 text-end">
-                                <a class="btn btn-dark py-2 px-4 mt-2 text-white col-12 rounded-3" data-value='Plan basico' id="planBasicoEng">Incluir</a>
+                        </div>
+                        <div class="col-lg-4 col-sm-12 offset-lg-2 wow slideInUp" data-wow-delay="0.3s">
+                            <div class="bg-light rounded position-relative" id="containerPlanProEng"
+                                style="z-index: 1;">
+                                <div class="border-bottom py-4 px-5 mb-4 form-check text-center">
+                                    <label class="form-check-label" role="button">
+                                        <h4 class="text-primary mb-1">PLAN COMPLETO</h4>
+
+                                        <span class="text-dark fw-bolder fs-2">
+                                            <small class="align-top fs-5">UF</small>
+                                            <span id="totalPriceProEng"></span>
+                                            <small class="align-bottom text-warning fs-5">+ IVA</small>
+                                        </span>
+
+                                    </label>
+                                </div>
+                                <div class="p-5 pt-0">
+                                    <div class="d-flex justify-content-between mb-3"><span>Encuesta Online</span>
+                                        <i class="fa fa-check text-primary pt-1"></i>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-3"><span>Reporte Resultados para
+                                            administrador RRHH</span>
+                                        <i class="fa fa-check text-primary pt-1"></i>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-3"><span>Reporte resultados para
+                                            líderes</span>
+                                        <i class="fa fa-check text-primary pt-1"></i>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span>Creación de planes de acción</span>
+                                        <i class="fa fa-check text-primary pt-1"></i>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span>Presentación Hallazgos y Recomendaciones Equipo Consultor</span>
+                                        <i class="fa fa-check text-primary pt-1"></i>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span>Difusión del estudio: Material comunicacional y webinar de difusión</span>
+                                        <i class="fa fa-check text-primary pt-1"></i>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="p-3 pt-0 text-end">
+                                    <button class="btn btn-warning py-2 px-4 mt-2 col-12 rounded-3"
+                                        data-value='Plan completo' data-label='b6432180-0605-11ee-9fef-598ff8a2911e'
+                                        id="planProEng">Contactar</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-5 col-sm-12 offset-lg-1 wow slideInUp" data-wow-delay="0.3s">
-                        <div class="bg-light rounded position-relative" id="containerPlanProEng" style="z-index: 1;">
-                            <div class="border-bottom py-4 px-5 mb-4 form-check text-center">
-                                <label class="form-check-label" role="button">
-                                    <h4 class="text-primary mb-1">Plan completo</h4>
+                </form>
+            </div>
+        </div>
 
-                                    <span class="text-dark fw-bolder fs-2">
-                                        <small class="align-top fs-5">UF</small>
-                                        <span id="totalPriceProEng"></span>
-                                        <small class="align-bottom fs-5">/ mensual</small>
-                                    </span>
-
-                                </label>
-                            </div>
-                            <div class="p-5 pt-0">
-                                <div class="d-flex justify-content-between mb-3"><span>HTML5 & CSS3</span>
-                                    <i class="fa fa-check text-primary pt-1"></i>
-                                </div>
-                                <div class="d-flex justify-content-between mb-3"><span>Bootstrap v5</span>
-                                    <i class="fa fa-check text-primary pt-1"></i>
-                                </div>
-                                <div class="d-flex justify-content-between mb-3"><span>Responsive Layout</span>
-                                    <i class="fa fa-check text-primary pt-1"></i>
-                                </div>
-                                <div class="d-flex justify-content-between mb-2"><span>Cross-browser Support</span>
-                                    <i class="fa fa-times text-danger pt-1"></i>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="p-3 pt-0 text-end">
-                                <a class="btn btn-dark py-2 px-4 mt-2 text-white col-12 rounded-3" data-value='Plan completo' id="planProEng">Incluir</a>
-                            </div>
-                        </div>
-                    </div>
+        <div class="position-fixed top-0 end-0 p-3" style="z-index: 1000">
+            <div id="engToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header bg-success text-white">
+                    <strong class="me-auto">¡Gracias por contactarnos!</strong>
+                </div>
+                <div class="toast-body text-white" style="background-color: #113f2a;">
+                    Nuestros agentes pronto se comunicarán contigo
                 </div>
             </div>
         </div>
 
+        <div class="position-fixed top-0 end-0 p-3" style="z-index: 1000">
+            <div id="engBadToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header bg-danger text-white">
+                    <strong class="me-auto">¡Oops!</strong>
+                </div>
+                <div class="toast-body text-white" style="background-color: #3f1411;">
+                    No se pude mandar la solicitud, por favor intente de nuevo
+                </div>
+            </div>
+        </div>
+
+        <!--
+        <div class="pipedriveWebForms" data-pd-webforms="https://webforms.pipedrive.com/f/2Xjyyn0y7fHkri63U5AvCVdL2Hi5njIbMUq3Uyds52z36hbR8aPHjH4kDVNWnvpcL">
+            <script src="https://webforms.pipedrive.com/f/loader"></script>
+        </div>
+
+            <div class="position-fixed p-3 bg-white border rounded-3 ease d-none" id="shoppingCart" style="z-index: 11; bottom: 1rem; left: 1rem;">
+            <div id="precioTotalToast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header border-0">
+                    <strong class="me-auto">Precio final (mensual)</strong>
+                    <div class="text-dark ms-3">
+                        <span class="fw-bolder">UF</span>
+                        <span class="fw-bolder" id="totalPrice">0</span>
+                        <small class="text-warning">+IVA</small>
+                    </div>
+                </div>
+                <div class="toast-body ease" id="toast-container__body">
+    
+                    <div class="pb-1 mb-1 border-bottom d-none" id="ContainerPlanEngSelected" style="font-size: 12px;">
+                        <h6>Ambientes laborales:</h6>
+                        <div>
+                            <i class="fas fa-box text-info me-1"></i><span id="planEngSelected"></span>
+                            <i class="fas fa-users text-info me-1 ms-3"></i><span id="planCounterUsers"></span>
+                            <i class="fa fa-dollar-sign text-info me-1 ms-3"></i>UF <span id="priceEngSelected"></span>
+                        </div>
+                    </div>
+    
+                    <div class="pb-1 mb-1 border-bottom d-none" id="planFormacionSelected" style="font-size: 12px;">
+                        <h6>Gestion de formacion:</h6>
+                        <div class="PrecioFinalEng">
+                            <span><i class="fas fa-box text-info me-1"></i>Plan basico</span>
+                            <span><i class="fas fa-users text-info me-1 ms-3"></i>1000</span>
+                            <span><i class="fa fa-dollar-sign text-info me-1 ms-3"></i>UF 1000</span>
+                        </div>
+                    </div>
+    
+                </div>
+                <a class="btn btn-warning py-2 px-4 mt-2 float-end text-white col-12 rounded-3" id="contactar">Cotizar</a>
+            </div>
+        </div>
+    
         <div class="container py-5">
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
                 <h5 class="fw-bold text-primary text-uppercase">Nuestros Planes - Ambientes Laborales</h5>
@@ -353,44 +446,7 @@
             </div>
         </div>
     </div>
-    <!-- Pricing Plan End -->
 
-    <div class="position-fixed p-3 bg-white border rounded-3 ease d-none" id="shoppingCart" style="z-index: 11; bottom: 1rem; left: 1rem;">
-        <div id="precioTotalToast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header border-0">
-                <strong class="me-auto">Precio final (mensual)</strong>
-                <div class="text-dark ms-3">
-                    <span class="fw-bolder">UF</span>
-                    <span class="fw-bolder" id="totalPrice">0</span>
-                    <small class="text-warning">+IVA</small>
-                </div>
-            </div>
-            <div class="toast-body ease" id="toast-container__body">
-
-                <div class="pb-1 mb-1 border-bottom d-none" id="ContainerPlanEngSelected" style="font-size: 12px;">
-                    <h6>Ambientes laborales:</h6>
-                    <div>
-                        <i class="fas fa-box text-info me-1"></i><span id="planEngSelected"></span>
-                        <i class="fas fa-users text-info me-1 ms-3"></i><span id="planCounterUsers"></span>
-                        <i class="fa fa-dollar-sign text-info me-1 ms-3"></i>UF <span id="priceEngSelected"></span>
-                    </div>
-                </div>
-
-                <div class="pb-1 mb-1 border-bottom d-none" id="planFormacionSelected" style="font-size: 12px;">
-                    <h6>Gestion de formacion:</h6>
-                    <div class="PrecioFinalEng">
-                        <span><i class="fas fa-box text-info me-1"></i>Plan basico</span>
-                        <span><i class="fas fa-users text-info me-1 ms-3"></i>1000</span>
-                        <span><i class="fa fa-dollar-sign text-info me-1 ms-3"></i>UF 1000</span>
-                    </div>
-                </div>
-
-            </div>
-            <a class="btn btn-warning py-2 px-4 mt-2 float-end text-white col-12 rounded-3" id="contactar">Contactar</a>
-        </div>
-    </div>
-
-    <!-- Quote Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
@@ -449,10 +505,7 @@
             </div>
         </div>
     </div>
-    <!-- Quote End -->
 
-
-    <!-- Vendor Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5 mb-5">
             <div class="bg-white">
@@ -470,23 +523,24 @@
             </div>
         </div>
     </div>
-    <!-- Vendor End -->
+     -->
 
-    <div id="footer"></div>
+        <div id="footer"></div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <!-- Template Javascript -->
-    <script src="js/htmlappend.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/cotizacion2.js"></script>
+        <!-- Template Javascript -->
+        <script src="js/htmlappend.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/cotizacion.js"></script>
 </body>
 
 </html>

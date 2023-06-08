@@ -1,103 +1,167 @@
 const planBasicoEng = document.getElementById('planBasicoEng');
 const planProEng = document.getElementById('planProEng');
 const cantColaboradores = document.getElementById('cantColaboradores');
-const btnContacto = document.getElementById('contactar');
 const shoppingCart = document.getElementById('shoppingCart');
 const totalPrice = document.getElementById('totalPrice');
 const totalPriceBasicEng = document.getElementById('totalPriceBasicEng');
 const totalPriceProEng = document.getElementById('totalPriceProEng');
+const formContact = document.getElementById('formContact');
+const emailContacto = document.getElementById('emailContacto');
+const contactForm = document.getElementById("contactForm");
+const URL_API_PIPEDRIVE = 'https://api.pipedrive.com/v1/leads?api_token=a33ef9998c19b76ece6b44f3af26722074839511';
+const toast = document.getElementById('engToast');
+const toastBad = document.getElementById('engBadToast');
+const modalToast = new bootstrap.Toast(toast);
+const modalToastBad = new bootstrap.Toast(toastBad);
+
+/*
+"id": "8af0b8b0-060c-11ee-8831-3bb6f72fed65" // "PLAN BASICO FORMACION"
+"id": "998134e0-060c-11ee-b598-316797ecfe16" // "PLAN PRO FORMACION"
+"id": "ae135610-0605-11ee-9fef-598ff8a2911e" // "PLAN BASICO ENGAGEMENT"
+"id": "b6432180-0605-11ee-9fef-598ff8a2911e" // "PLAN PRO ENGAGEMENT"
+
 // shoppingCart elements
 const ContainerPlanEngSelected = document.getElementById('ContainerPlanEngSelected');
 const planEngSelected = document.getElementById('planEngSelected');
 const planCounterUsers = document.getElementById('planCounterUsers');
 const priceEngSelected = document.getElementById('priceEngSelected');
+*/
 
-const MULTIPLICADOR = {
-    'basicEng': 1,
-    'ProEng': 2
-}
-
-class Costo {
-    constructor(planes) {
-        this.planes = planes;
+const DESCUENTOS = {
+    'Engagement': {
+        'PlanBasico': 0.15
+    },
+    'Formacion': {
+        'PlanBasico': 0.15
     }
+};
 
-    showPlan(plan){
-        if(plan === 'Engagement'){
-            ContainerPlanEngSelected.classList.remove('d-none');
-            planEngSelected.innerHTML = this.planes['Engagement'].plan;
-            planCounterUsers.innerHTML = this.planes['Engagement'].cantidadColaboradores;
-            priceEngSelected.innerHTML = this.planes['Engagement'].total;
-        }else if(plan === 'Formacion'){
-
-        }
-    }
-
-    // funcion para ponerse en contacto
-    planContactar() {
-        console.log(this.plan, this.cantidadColaboradores);
-    }
-}
+const BASE = {
+    'Engagement': [{
+        '300': { 'Base': 86, 'Unidad': 0.07 },
+        '500': { 'Base': 89, 'Unidad': 0.09 },
+        '1000': { 'Base': 99, 'Unidad': 0.08 },
+        '4000': { 'Base': 109, 'Unidad': 0.07 },
+        '10000': { 'Base': 119, 'Unidad': 0.05 },
+    }],
+    'Formacion': 1,
+};
 
 class CostoEng {
-    constructor(plan, cantidadColaboradores, total) {
+    constructor(plan, cantidadColaboradores, total, label = '', email = '') {
         this.plan = plan;
         this.cantidadColaboradores = cantidadColaboradores;
         this.total = total;
+        this.label = label;
+        this.email = email;
     }
 
     costoPlanBasico() {
-        const total = MULTIPLICADOR['basicEng'] * this.cantidadColaboradores;
+        let total = this.calcularCosto();
+        if (this.plan === 'basic') {
+            total = total - (total * DESCUENTOS['Engagement']['PlanBasico']);
+            total = parseFloat(total.toFixed(2));
+        }
+
         totalPriceBasicEng.innerHTML = total;
-        totalPrice.innerHTML = total;
         this.total = total;
     }
 
     costoPlanPro() {
-        const total = MULTIPLICADOR['ProEng'] * this.cantidadColaboradores;
+        const total = this.calcularCosto();
         totalPriceProEng.innerHTML = total;
-        totalPrice.innerHTML = total;
         this.total = total;
     }
 
-    addPlan() {
-        const planEng = {
-            total: this.total,
-            plan: this.plan,
-            cantidadColaboradores: this.cantidadColaboradores
+    calcularCosto() {
+        let total = 0;
+        let base = 0;
+        let valorUsuario = 0;
+
+        if (this.cantidadColaboradores <= 100) {
+            total = BASE['Engagement'][0]['300']['Base'];
+            return total;
+        } else if (this.cantidadColaboradores > 100 && this.cantidadColaboradores <= 300) {
+            base = BASE['Engagement'][0]['300']['Base'];
+            valorUsuario = BASE['Engagement'][0]['300']['Unidad'];
+            total = base + (valorUsuario * (this.cantidadColaboradores - 100));
+            return total;
+        } else if (this.cantidadColaboradores > 300 && this.cantidadColaboradores <= 500) {
+            base = BASE['Engagement'][0]['500']['Base'];
+            valorUsuario = BASE['Engagement'][0]['500']['Unidad'];
+        } else if (this.cantidadColaboradores > 500 && this.cantidadColaboradores <= 1000) {
+            base = BASE['Engagement'][0]['1000']['Base'];
+            valorUsuario = BASE['Engagement'][0]['1000']['Unidad'];
+        } else if (this.cantidadColaboradores > 1000 && this.cantidadColaboradores <= 4000) {
+            base = BASE['Engagement'][0]['4000']['Base'];
+            valorUsuario = BASE['Engagement'][0]['4000']['Unidad'];
+        } else if (this.cantidadColaboradores > 4000 && this.cantidadColaboradores <= 10000) {
+            base = BASE['Engagement'][0]['10000']['Base'];
+            valorUsuario = BASE['Engagement'][0]['10000']['Unidad'];
         }
-        cotizador.planes['Engagement'] = planEng;
-        cotizador.showPlan('Engagement');
+
+        total = base + (valorUsuario * this.cantidadColaboradores);
+        total = parseFloat(total.toFixed(2));
+        return total;
     }
 
+    async contactar() {
+        const data = {
+            "title": `${this.email} (${this.cantidadColaboradores} personas)`,
+            "organization_id": 165,
+            "label_ids": [this.label],
+            "value": {
+                "amount": this.total,
+                "currency": "CLF"
+            },
+            "was_seen": false
+        };
+        const response = await fetch(URL_API_PIPEDRIVE, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        console.log(response);
+        if (response.status === 201) {
+            modalToast.show();
+        } else {
+            modalToastBad.show()
+        }
+    }
 }
 
 class costoAcre { }
 
 //inicializando clases
 const cotizadorEng = new CostoEng('basic', cantColaboradores.value, 0);
-const cotizador = new Costo({ 'Engagement': [], 'Formacion': [] });
 
 cotizadorEng.costoPlanBasico();
 cotizadorEng.costoPlanPro();
 
-planBasicoEng.addEventListener('click', (event) => {
-    shoppingCart.classList.remove("d-none");
-    let plan = event.target.dataset.value;
-    cotizadorEng.plan = plan;
-    cotizadorEng.costoPlanBasico();
-    cotizadorEng.addPlan();
-    cotizadorEng.showPlan();
-});
+// planBasicoEng.addEventListener('click', (event) => {
+//     event.preventDefault();
+//     let plan = event.target.dataset.value;
+//     let label = event.target.dataset.label;
+//     cotizadorEng.plan = plan;
+//     cotizadorEng.label = label;
+//     if(cotizadorEng.cantidadColaboradores === 0 ) return null;
+//     if(cotizadorEng.email === '' ) return null;
+//     // cotizadorEng.contactar();
+// });
 
-planProEng.addEventListener('click', (event) => {
-    shoppingCart.classList.remove("d-none");
-    let plan = event.target.dataset.value;
-    cotizadorEng.plan = plan;
-    cotizadorEng.costoPlanPro();
-    cotizadorEng.addPlan();
-    cotizadorEng.showPlan();
-});
+// planProEng.addEventListener('click', (event) => {
+//     event.preventDefault();
+//     let plan = event.target.dataset.value;
+//     let label = event.target.dataset.label;
+//     cotizadorEng.plan = plan;
+//     cotizadorEng.label = label;
+//     if(cotizadorEng.cantidadColaboradores === 0 ) return null;
+//     if(cotizadorEng.email === '' ) return null;
+//     // cotizadorEng.contactar();
+// });
 
 cantColaboradores.addEventListener('keyup', (event) => {
     let cantColaboradores = parseInt(event.target.value);
@@ -108,6 +172,15 @@ cantColaboradores.addEventListener('keyup', (event) => {
     cotizadorEng.costoPlanPro();
 });
 
-btnContacto.addEventListener('click', event => {
-    cotizadorEng.planContactar();
+emailContacto.addEventListener('keyup', (event) => {
+    cotizadorEng.email = emailContacto.value;
+});
+
+contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let plan = event.submitter.dataset.value;
+    let label = event.submitter.dataset.label;
+    cotizadorEng.plan = plan;
+    cotizadorEng.label = label;
+    cotizadorEng.contactar();
 });
