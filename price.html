@@ -143,6 +143,10 @@
                                     <button class="btn btn-warning py-2 px-4 mt-2 col-12 rounded-3"
                                         data-value='Plan basico' data-label='ae135610-0605-11ee-9fef-598ff8a2911e'
                                         id="planBasicoEng">Contactar</button>
+                                    <button class="btn btn-warning py-2 px-4 mt-2 col-12 rounded-3 d-none" id="planBasicoEngSpinner">
+                                        <span class="spinner-border text-dark spinner-border-sm" role="status"></span>
+                                        Loading...
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -190,7 +194,13 @@
                                 <div class="p-3 pt-0 text-end">
                                     <button class="btn btn-warning py-2 px-4 mt-2 col-12 rounded-3"
                                         data-value='Plan completo' data-label='b6432180-0605-11ee-9fef-598ff8a2911e'
-                                        id="planProEng">Contactar</button>
+                                        id="planProEng">Contactar
+                                    </button>
+                                    <button class="btn btn-warning py-2 px-4 mt-2 col-12 rounded-3 d-none"
+                                        id="planProEngSpinner">
+                                        <span class="spinner-border text-dark spinner-border-sm" role="status"></span>
+                                        Loading...
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -543,23 +553,27 @@
         <script src="js/main.js"></script>
         <script src="js/cotizacion.js"></script>
 
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-    
-        ym(93883561, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-        });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/93883561" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+            (function (m, e, t, r, i, k, a) {
+                m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+                m[i].l = 1 * new Date();
+                for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+            })
+                (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+            ym(93883561, "init", {
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                webvisor: true
+            });
+        </script>
+        <noscript>
+            <div><img src="https://mc.yandex.ru/watch/93883561" style="position:absolute; left:-9999px;" alt="" /></div>
+        </noscript>
+        <!-- /Yandex.Metrika counter -->
 
 </body>
 
