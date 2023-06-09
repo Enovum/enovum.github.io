@@ -92,115 +92,123 @@
                 <h5 class="fw-bold text-primary text-uppercase">
                     Arma tu plan de ambientes laborales
                 </h5>
+                <h5 class="text-primary">En 3 simples pasos</h5>
                 <h1 class="mb-0"></h1>
             </div>
             <div class="d-flex lg-offset-1">
                 <form id="contactForm">
-                    <div class="row g-0">
+                    <div class="row g-0 justify-content-center">
                         <div class="d-grid mb-4 gap-3 justify-content-center border py-3 rounded-3 border-2"
                             style="grid-template-columns: 1fr 1fr;justify-items: center;">
                             <div class="text-center">
-                                <h4>Cantidad de colaboradores: </h4>
+                                <h4><span class="rounded-circle border border-2 px-2 border-info">1</span> Cantidad de colaboradores: </h4>
                                 <input class="form-control-lg bg-info text-white border-0" value="1000" placeholder="0"
                                     type="text"
                                     onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
                                     maxlength="4" name="cantColaboradores" id="cantColaboradores" required>
                             </div>
                             <div class="text-center">
-                                <h4>Medio de contacto: </h4>
+                                <h4><span class="rounded-circle border border-2 px-2 border-info">2</span> Medio de contacto: </h4>
                                 <input class="form-control-lg bg-info text-white border-0"
                                     placeholder="Ejemplo@gmail.com" type="email" name="emailContacto" id="emailContacto"
                                     required>
                             </div>
                         </div>
-                        <div class="col-lg-4 offset-lg-1 col-sm-12 wow slideInUp" data-wow-delay="0.6s">
-                            <div class="bg-white shadow rounded" id="containerPlanBasicoEng">
-                                <div class="border-bottom py-4 px-5 mb-4 form-check text-center">
-                                    <label class="form-check-label" role="button">
-                                        <h4 class="text-primary mb-1">PLAN BÁSICO</h4>
-                                        <span class="text-dark fw-bolder fs-2">
-                                            <small class="align-top fs-5">UF</small>
-                                            <span id="totalPriceBasicEng"></span>
-                                            <small class="align-bottom text-warning fs-5">+ IVA</small>
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="p-5 pt-0">
-                                    <div class="d-flex justify-content-between mb-3"><span>Encuesta Online</span>
-                                        <i class="fa fa-check text-primary pt-1"></i>
+                        <div class="row p-0 border border-2 rounded-3">
+                            <h4 class="mb-3 mt-3"> <span class="rounded-circle border border-2 px-2 border-info">3</span> Selecciona un plan de preferencia: </h4>
+                            <div class="col-lg-4 offset-lg-1 col-sm-12 wow slideInUp" data-wow-delay="0.6s">
+                                <div class="bg-white shadow rounded" id="containerPlanBasicoEng">
+                                    <div class="border-bottom py-4 px-5 mb-4 form-check text-center">
+                                        <label class="form-check-label" role="button">
+                                            <h4 class="text-primary mb-1">PLAN BÁSICO</h4>
+                                            <span class="text-dark fw-bolder fs-2">
+                                                <small class="align-top fs-5">UF</small>
+                                                <span id="totalPriceBasicEng"></span>
+                                                <small class="align-bottom text-warning fs-5">+ IVA</small>
+                                            </span>
+                                        </label>
                                     </div>
-                                    <div class="d-flex justify-content-between mb-3"><span>Reporte Resultados para
-                                            administrador RRHH</span>
-                                        <i class="fa fa-check text-primary pt-1"></i>
+                                    <div class="p-5 pt-0">
+                                        <div class="d-flex justify-content-between mb-3"><span>Encuesta Online</span>
+                                            <i class="fa fa-check text-primary pt-1"></i>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-3"><span>Reporte Resultados para
+                                                administrador RRHH</span>
+                                            <i class="fa fa-check text-primary pt-1"></i>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-3"><span>Reporte resultados para
+                                                líderes</span>
+                                            <i class="fa fa-check text-primary pt-1"></i>
+                                        </div>
                                     </div>
-                                    <div class="d-flex justify-content-between mb-3"><span>Reporte resultados para
-                                            líderes</span>
-                                        <i class="fa fa-check text-primary pt-1"></i>
+                                    <hr>
+                                    <div class="p-3 pt-0 text-end">
+                                        <button class="btn btn-warning py-2 px-4 mt-2 col-12 rounded-3"
+                                            data-value='Plan basico' data-label='ae135610-0605-11ee-9fef-598ff8a2911e'
+                                            id="planBasicoEng">Contactar</button>
+                                        <button class="btn btn-warning py-2 px-4 mt-2 col-12 rounded-3 d-none"
+                                            id="planBasicoEngSpinner">
+                                            <span class="spinner-border text-dark spinner-border-sm"
+                                                role="status"></span>
+                                            Loading...
+                                        </button>
                                     </div>
-                                </div>
-                                <hr>
-                                <div class="p-3 pt-0 text-end">
-                                    <button class="btn btn-warning py-2 px-4 mt-2 col-12 rounded-3"
-                                        data-value='Plan basico' data-label='ae135610-0605-11ee-9fef-598ff8a2911e'
-                                        id="planBasicoEng">Contactar</button>
-                                    <button class="btn btn-warning py-2 px-4 mt-2 col-12 rounded-3 d-none" id="planBasicoEngSpinner">
-                                        <span class="spinner-border text-dark spinner-border-sm" role="status"></span>
-                                        Loading...
-                                    </button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-12 offset-lg-2 wow slideInUp" data-wow-delay="0.3s">
-                            <div class="bg-light rounded position-relative" id="containerPlanProEng"
-                                style="z-index: 1;">
-                                <div class="border-bottom py-4 px-5 mb-4 form-check text-center">
-                                    <label class="form-check-label" role="button">
-                                        <h4 class="text-primary mb-1">PLAN COMPLETO</h4>
+                            <div class="col-lg-4 col-sm-12 offset-lg-2 wow slideInUp" data-wow-delay="0.3s">
+                                <div class="bg-light rounded position-relative" id="containerPlanProEng"
+                                    style="z-index: 1;">
+                                    <div class="border-bottom py-4 px-5 mb-4 form-check text-center">
+                                        <label class="form-check-label" role="button">
+                                            <h4 class="text-primary mb-1">PLAN COMPLETO</h4>
 
-                                        <span class="text-dark fw-bolder fs-2">
-                                            <small class="align-top fs-5">UF</small>
-                                            <span id="totalPriceProEng"></span>
-                                            <small class="align-bottom text-warning fs-5">+ IVA</small>
-                                        </span>
+                                            <span class="text-dark fw-bolder fs-2">
+                                                <small class="align-top fs-5">UF</small>
+                                                <span id="totalPriceProEng"></span>
+                                                <small class="align-bottom text-warning fs-5">+ IVA</small>
+                                            </span>
 
-                                    </label>
-                                </div>
-                                <div class="p-5 pt-0">
-                                    <div class="d-flex justify-content-between mb-3"><span>Encuesta Online</span>
-                                        <i class="fa fa-check text-primary pt-1"></i>
+                                        </label>
                                     </div>
-                                    <div class="d-flex justify-content-between mb-3"><span>Reporte Resultados para
-                                            administrador RRHH</span>
-                                        <i class="fa fa-check text-primary pt-1"></i>
+                                    <div class="p-5 pt-0">
+                                        <div class="d-flex justify-content-between mb-3"><span>Encuesta Online</span>
+                                            <i class="fa fa-check text-primary pt-1"></i>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-3"><span>Reporte Resultados para
+                                                administrador RRHH</span>
+                                            <i class="fa fa-check text-primary pt-1"></i>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-3"><span>Reporte resultados para
+                                                líderes</span>
+                                            <i class="fa fa-check text-primary pt-1"></i>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-3">
+                                            <span>Creación de planes de acción</span>
+                                            <i class="fa fa-check text-primary pt-1"></i>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-3">
+                                            <span>Presentación Hallazgos y Recomendaciones Equipo Consultor</span>
+                                            <i class="fa fa-check text-primary pt-1"></i>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-3">
+                                            <span>Difusión del estudio: Material comunicacional y webinar de
+                                                difusión</span>
+                                            <i class="fa fa-check text-primary pt-1"></i>
+                                        </div>
                                     </div>
-                                    <div class="d-flex justify-content-between mb-3"><span>Reporte resultados para
-                                            líderes</span>
-                                        <i class="fa fa-check text-primary pt-1"></i>
+                                    <hr>
+                                    <div class="p-3 pt-0 text-end">
+                                        <button class="btn btn-warning py-2 px-4 mt-2 col-12 rounded-3"
+                                            data-value='Plan completo' data-label='b6432180-0605-11ee-9fef-598ff8a2911e'
+                                            id="planProEng">Contactar
+                                        </button>
+                                        <button class="btn btn-warning py-2 px-4 mt-2 col-12 rounded-3 d-none"
+                                            id="planProEngSpinner">
+                                            <span class="spinner-border text-dark spinner-border-sm"
+                                                role="status"></span>
+                                            Loading...
+                                        </button>
                                     </div>
-                                    <div class="d-flex justify-content-between mb-3">
-                                        <span>Creación de planes de acción</span>
-                                        <i class="fa fa-check text-primary pt-1"></i>
-                                    </div>
-                                    <div class="d-flex justify-content-between mb-3">
-                                        <span>Presentación Hallazgos y Recomendaciones Equipo Consultor</span>
-                                        <i class="fa fa-check text-primary pt-1"></i>
-                                    </div>
-                                    <div class="d-flex justify-content-between mb-3">
-                                        <span>Difusión del estudio: Material comunicacional y webinar de difusión</span>
-                                        <i class="fa fa-check text-primary pt-1"></i>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="p-3 pt-0 text-end">
-                                    <button class="btn btn-warning py-2 px-4 mt-2 col-12 rounded-3"
-                                        data-value='Plan completo' data-label='b6432180-0605-11ee-9fef-598ff8a2911e'
-                                        id="planProEng">Contactar
-                                    </button>
-                                    <button class="btn btn-warning py-2 px-4 mt-2 col-12 rounded-3 d-none"
-                                        id="planProEngSpinner">
-                                        <span class="spinner-border text-dark spinner-border-sm" role="status"></span>
-                                        Loading...
-                                    </button>
                                 </div>
                             </div>
                         </div>
