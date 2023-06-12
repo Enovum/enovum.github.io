@@ -101,21 +101,25 @@
                         <div class="d-grid mb-4 gap-3 justify-content-center border py-3 rounded-3 border-2"
                             style="grid-template-columns: 1fr 1fr;justify-items: center;">
                             <div class="text-center">
-                                <h4><span class="rounded-circle border border-2 px-2 border-info">1</span> Cantidad de colaboradores: </h4>
+                                <h4><span class="rounded-circle border border-2 px-2 border-info">1</span> Cantidad de
+                                    colaboradores: </h4>
                                 <input class="form-control-lg bg-info text-white border-0" value="1000" placeholder="0"
                                     type="text"
                                     onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
                                     maxlength="4" name="cantColaboradores" id="cantColaboradores" required>
                             </div>
                             <div class="text-center">
-                                <h4><span class="rounded-circle border border-2 px-2 border-info">2</span> Medio de contacto: </h4>
+                                <h4><span class="rounded-circle border border-2 px-2 border-info">2</span> Medio de
+                                    contacto: </h4>
                                 <input class="form-control-lg bg-info text-white border-0"
                                     placeholder="Ejemplo@gmail.com" type="email" name="emailContacto" id="emailContacto"
                                     required>
                             </div>
                         </div>
                         <div class="row p-0 border border-2 rounded-3">
-                            <h4 class="mb-3 mt-3"> <span class="rounded-circle border border-2 px-2 border-info">3</span> Selecciona un plan de preferencia: </h4>
+                            <h4 class="mb-3 mt-3"> <span
+                                    class="rounded-circle border border-2 px-2 border-info">3</span> Selecciona un plan
+                                de preferencia: </h4>
                             <div class="col-lg-4 offset-lg-1 col-sm-12 wow slideInUp" data-wow-delay="0.6s">
                                 <div class="bg-white shadow rounded" id="containerPlanBasicoEng">
                                     <div class="border-bottom py-4 px-5 mb-4 form-check text-center">
@@ -144,7 +148,7 @@
                                     <hr>
                                     <div class="p-3 pt-0 text-end">
                                         <button class="btn btn-warning py-2 px-4 mt-2 col-12 rounded-3"
-                                            data-value='Plan basico' data-label='ae135610-0605-11ee-9fef-598ff8a2911e'
+                                            data-value='Plan Básico Engagement' data-label='ae135610-0605-11ee-9fef-598ff8a2911e'
                                             id="planBasicoEng">Contactar</button>
                                         <button class="btn btn-warning py-2 px-4 mt-2 col-12 rounded-3 d-none"
                                             id="planBasicoEngSpinner">
@@ -199,7 +203,7 @@
                                     <hr>
                                     <div class="p-3 pt-0 text-end">
                                         <button class="btn btn-warning py-2 px-4 mt-2 col-12 rounded-3"
-                                            data-value='Plan completo' data-label='b6432180-0605-11ee-9fef-598ff8a2911e'
+                                            data-value='Plan Completo Engagement' data-label='b6432180-0605-11ee-9fef-598ff8a2911e'
                                             id="planProEng">Contactar
                                         </button>
                                         <button class="btn btn-warning py-2 px-4 mt-2 col-12 rounded-3 d-none"
@@ -214,6 +218,50 @@
                         </div>
                     </div>
                 </form>
+            </div>
+        </div>
+
+        <div class="modal fade" id="ModalSuccessMessage" aria-hidden="true" aria-labelledby="ModalSuccessMessageLabel"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <h1 class="text-success text-center m-2 fa-5x zIndex-1"><i class="far fa-check-circle"></i></h1>
+                    <div class="modal-header justify-content-center border-0 zIndex-1">
+                        <h3 class="modal-title" id="ModalSuccessMessageLabel">¡Gracias por cotizar con nosotros!</h3>
+                    </div>
+                    <div class="modal-body zIndex-1 justify-content-center">
+                        <h5 class="text-center">Has cotizado:</h5>
+                        <div class="mb-4 text-center">
+                            <span><i class="fas fa-box text-success me-1"></i> <span id="planEngSelected"></span> </span>
+                            <span><i class="fas fa-users text-success me-1 ms-3"></i> <span id="planCounterUsers"></span></span>
+                            <span><i class="fa fa-dollar-sign text-success me-1 ms-3"></i> UF <span id="priceEngSelected"></span> + IVA</span>
+                        </div>
+                        <h6>Nuestro equipo consultor te contactará lo antes posible para gestionar la cotización.</h6>
+                    </div>
+                    <div class="modal-footer justify-content-center border-0 zIndex-1">
+                        <button class="btn btn-success"
+                        data-bs-dismiss="modal" aria-label="Close">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="ModalDangerMessage" aria-hidden="true" aria-labelledby="ModalDangerMessageLabel"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <h1 class="text-danger text-center m-2 fa-5x zIndex-1"><i class="far fa-times-circle"></i></h1>
+                    <div class="modal-header justify-content-center border-0 zIndex-1">
+                        <h3 class="modal-title" id="ModalDangerMessageLabel">Ha ocurrido un error</h3>
+                    </div>
+                    <div class="modal-body zIndex-1 justify-content-center">
+                        <h6 class="text-center">Por favor vuelva ha intentarlo nuevamente</h6>
+                    </div>
+                    <div class="modal-footer justify-content-center border-0 zIndex-1">
+                        <button class="btn btn-danger"
+                        data-bs-dismiss="modal" aria-label="Close">Cerrar</button>
+                    </div>
+                </div>
             </div>
         </div>
 
